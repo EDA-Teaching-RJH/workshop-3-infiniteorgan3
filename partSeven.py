@@ -66,6 +66,8 @@ while quit == False:
                 print("The answer is: " + str(operand1 * operand2) + ".")
         case "%":
                 print("The answer is: " + str(operand1 % operand2) + ".")
+        case "^":
+            print("The answer is: " + str(operand1 ^ operand2) + ".")
         case "quit":
                 quit = True
                 break
