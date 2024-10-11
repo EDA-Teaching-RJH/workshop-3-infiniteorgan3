@@ -6,7 +6,7 @@ while quit == False:
     operator = ""
     operand1 = ""
     operand2 = ""
-    pattern = re.compile(r"\d+[\\+|-|\\*|/|%]\d+")
+    pattern = re.compile(r"\d+[\\+|-|\\*|/|%|\\^]\d+")
 
     if (bool(re.search(pattern,operation)) == True):
         for i in range(operation.len()):
