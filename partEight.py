@@ -15,7 +15,7 @@ def main():
         print("You decided that you could do it later, after all, you have to get ready before even worrying about the ID card.")
 
     while timeleft > 0:
-        thingstoputinbag = ["notebook", "plush", "book", "keyring" ""]
+        thingstoputinbag = ["notebook", "plush", "book", "keyring", ""]
         tasksleft = ["breakfast", "getting dressed", "washing", "packing bag", "tidying", ""]
         currentinput = validateinput(input("You have some other things that you need to do before leaving. breakfast/getting dressed/washing/packing bag/tidying ").lower(), tasksleft)
         match (currentinput):
@@ -93,8 +93,8 @@ def main():
                 else:
                     print("You decide to leave it in your room. It could be more useful another time.")
 # here
-print("You have run out of time to do anything else before you leave. After all, if you didn't leave now, you would be late.")     
-
+    print("You have run out of time to do anything else before you leave. After all, if you didn't leave now, you would be late.")
+    tasksleft.remove("")
 
 
 
