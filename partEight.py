@@ -1,9 +1,10 @@
+inventory = []
+tasksdone = []
 def main():
-    inventory = []
+
     currentinput = ""
     timeleft = 5
     tempinput = ""
-    tasksdone = []
 
 
     print("You awaken in your bed and look at the clock. There are a few things that you need to do before you leave for another day.")
@@ -92,13 +93,19 @@ def main():
                     inventory.append("money")
                 else:
                     print("You decide to leave it in your room. It could be more useful another time.")
-# here
+
     print("You have run out of time to do anything else before you leave. After all, if you didn't leave now, you would be late.")
     tasksleft.remove("")
-
-
-
-
+    if (tasksdone.count == tasksleft.count):
+        print("You feel confident that you have done everything that you can do for now before leaving.")
+        bus()
+    elif (tasksdone.count != 0):
+        print("You think that there is more to do, but that can wait for later.")
+        bus()
+    else:
+        print("You feel so lethargic today and feel as though you cannot do anything but stare at the wall. So you elect to return to the warmth of your bed, at least you will be comfortable there. It is a waste of time to leave this house if you won't be able to focus on anything for the rest of the day.")
+        print("You have lost.")
+    
 
 
 def validateinput(vinput, validoptions):
@@ -106,3 +113,20 @@ def validateinput(vinput, validoptions):
         vinput = input("That is not a valid option, please try again: ").lower()
     return vinput
 
+def bus():
+    if ("id card" not in inventory and "money" not in inventory):
+        print("As you move to get onto the bus, you realise that you cannot pay for the ticket you so desperately need- embarassing yourself in front of the expectant driver. You step off of the bus as quickly as you got on and watch helplessly as it leaves your stop- stranding you. Defeated, you resign yourself to missing today and return.")
+        if (tasksdone.count != 5):
+            print("You think that at least you can do those tasks that you left without doing, and spend more time with your cat, as dread mounts in you.")
+        else:
+            print("There is nothing that you can do except wander home as a sense of dread compounds inside of you.")
+        print("You have lost.")
+    elif ("money" in inventory):
+        print("As your stomach plummets at the thought at you not having the ID necessary to validate your ticket, you search your bag and find the money that you had picked up earlier. It was fortunate that you had some on hand. You pay for a temporary bus ticket apologetically and seat yourself on the bus, secure in the knowledge that you will reach your destination on time if nothing else.")
+        print("You have won.")
+    else:
+        print("You pull your ID card from your coat pocket and the bus driver nods after looking between it and the ticket on your phone. You smile and thank the driver before searching for a spare seat on the bus.")
+        if ("assorted fruits" in inventory):
+            print("You open your bag to find the fruit from earlier at the bottom and pull it out before closing your bag again. The fruit rests on your lap as it waits for you to eat.")
+        print("You settle against the window, preparing for the long journey ahead to your destination- but everything is as it should be.")
+        print("You have won.")
